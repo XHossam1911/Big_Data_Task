@@ -2,7 +2,9 @@
 
 ## 📋 Task Overview
 
-This Task demonstrates how to design and build a **Big Data architecture** for an analytical system following the **Medallion (Bronze/Silver/Gold) pattern**, starting from raw CSVs up to a **Data Warehouse** (PostgreSQL DWH) — all orchestrated via **Apache Spark (PySpark)** inside a **Dockerized environment**.
+This task implements a Big Data processing pipeline using the Medallion Architecture (Bronze / Silver / Gold layers).
+It ingests raw CSV data, processes and transforms it using Apache Spark (PySpark), and loads the curated results into a PostgreSQL Data Warehouse.
+The entire solution is containerized and orchestrated within a Docker environment, ensuring reproducibility and scalability across environments.
 
 The pipeline simulates an enterprise-grade approach with support for:
 - Incremental loads (CDC)
