@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: pgdwh
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpass
+      POSTGRES_DB: dwh
+
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pguser -d dwh"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  spark:
+    build:
+      context: .
+      dockerfile: Dockerfile.spark
+    container_name: spark-runner
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      JDBC_URL: "jdbc:postgresql://postgres:5432/dwh"
+      JDBC_USER: "pguser"
+      JDBC_PASS: "pgpass"
+      SPARK_LOCAL_IP: "0.0.0.0"
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: ["bash"]
+    tty: true
+
+volumes:
+  pgdata:
