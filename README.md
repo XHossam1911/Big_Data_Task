@@ -90,10 +90,6 @@ The pipeline simulates an enterprise-grade approach with support for:
 
 The **Gold layer** implements a **Dimensional Data Model (Star Schema)** designed for analytical queries and historical reporting.
 
-<p align="center">
-  <img src="c1afe98f-b40d-4230-a115-0a8bda140a71.png" alt="DWH Schema Diagram" width="850"/>
-</p>
-
 ### ⭐ Overview
 
 | Table | Type | Description |
