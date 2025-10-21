@@ -229,11 +229,8 @@ The **Gold layer** implements a **Dimensional Data Model (Star Schema)** designe
 │ └── init/01_ddl.sql # creates schema gold
 ├── lib/
 │ └── postgresql-42.7.3.jar # JDBC driver
-├── scripts/
-│ └── export_gold_csv.sh # CSV export
 ├── exports/
 │ ├── gold_csv/ # exported CSVs
-│ └── gold_parquet/ # exported Parquets
 ├── bronze_to_silver_optimized.py
 ├── gold_sql_to_postgres.py
 ├── export_gold_to_parquet.py
