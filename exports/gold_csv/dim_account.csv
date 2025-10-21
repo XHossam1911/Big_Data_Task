@@ -1,0 +1,4 @@
+account_sk,acc_no,status,type,effective_start_date,effective_end_date,is_current
+1486058684417,123,In Active,CC,2022-03-01,9999-12-31,t
+781684047872,456,Active,Loan,2022-02-01,9999-12-31,t
+1486058684416,123,Active,CC,2022-01-01,2022-02-28,f

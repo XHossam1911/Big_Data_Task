@@ -1,0 +1,5 @@
+person_sk,person,name,id,effective_start_date,effective_end_date,is_current
+970662608896,X,Ahmed,ID1,2022-01-01,9999-12-31,t
+489626271744,Y,Hana,ID2,2022-02-01,9999-12-31,t
+893353197569,Z,Rana Ali,,2022-03-01,9999-12-31,t
+893353197568,Z,Rana,ID3 (NID),2022-02-01,2022-02-28,f
