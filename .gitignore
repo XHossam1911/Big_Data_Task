@@ -1,0 +1,23 @@
+cat > .gitignore <<'EOF'
+# python
+__pycache__/
+*.pyc
+
+# spark / temp
+*.crc
+*/_SUCCESS
+*/_committed_*
+*/_started_*
+*/_temporary/
+
+# data outputs (source CSVs allowed, but ignore processed layers)
+data/silver/
+data/gold/
+
+# docker volumes (compose-managed)
+pgdata/
+
+# IDE / os
+.DS_Store
+.vscode/
+EOF
