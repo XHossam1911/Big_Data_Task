@@ -29,37 +29,37 @@ The pipeline simulates an enterprise-grade approach with support for:
 
 ## 🧩 Architecture Diagram
 
-  +----------------+
-  |   Bronze       |
-  |  (Raw CSVs)    |
-  +--------+-------+
-           |
-    PySpark ETL
-           v
-  +----------------+
-  |   Silver       |
-  |  (Cleaned,     |
-  |   CDC handled) |
-  +--------+-------+
-           |
-   Spark SQL (SCD2)
-           v
-  +----------------+
-  |    Gold        |
-  |  (DWH Model)   |
-  +--------+-------+
-           |
-    JDBC → PostgreSQL
-           v
-  +----------------+
-  |  Exports (BI)  |
-  | CSV / Parquet  |
-  +----------------+
+```text
+      +----------------+
+      |   Bronze       |
+      |  (Raw CSVs)    |
+      +--------+-------+
+               |
+        PySpark ETL
+               v
+      +----------------+
+      |   Silver       |
+      |  (Cleaned,     |
+      |   CDC handled) |
+      +--------+-------+
+               |
+       Spark SQL (SCD2)
+               v
+      +----------------+
+      |    Gold        |
+      |  (DWH Model)   |
+      +--------+-------+
+               |
+        JDBC → PostgreSQL
+               v
+      +----------------+
+      |  Exports (BI)  |
+      | CSV / Parquet  |
+      +----------------+
+```
 
 
 
-
----
 
 ## 🧰 Tools & Technologies
 
@@ -218,7 +218,7 @@ The **Gold layer** implements a **Dimensional Data Model (Star Schema)** designe
 - **Adaptive Execution**: Spark automatically adjusts join strategies.
 
 ---
-
+```text
 ## 🧱 File Structure
 .
 ├── data/
@@ -241,4 +241,7 @@ The **Gold layer** implements a **Dimensional Data Model (Star Schema)** designe
 ├── docker-compose.yml
 ├── Makefile
 └── README.md
+```
+
+
 
